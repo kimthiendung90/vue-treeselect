@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Vuetiful Component Framework</title>
+</head>
+
+<body>
+    <div id="app">
+      <treeselect
+      :multiple="true"
+      :options="options"
+      placeholder="Select your favourite(s)..."
+      v-model="value"
+      />
+      <pre class="result">{{ value }}</pre>
+    </div>
+    <script src="./core/vue.min.js"></script>
+    <link rel="stylesheet" href="./dist/vue-treeselect.min.css">
+    <script src="./dist/vue-treeselect.min.js"></script>
+    <script>
+      console.log(VueTreeselect)
+      new Vue({
+        el: '#app',
+        components: {
+          Treeselect: VueTreeselect.Treeselect,
+        },
+        data: {
+          value: [],
+          options: [ {
+            id: 'a',
+            label: 'a',
+            children: [ {
+              id: 'aa',
+              label: 'aa',
+            }, {
+              id: 'ab',
+              label: 'ab',
+            } ],
+          }, {
+            id: 'b',
+            label: 'b',
+          } ],
+        },
+      })
+            
+    </script>
+</body>
+
+</html>
